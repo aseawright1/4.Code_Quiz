@@ -2,7 +2,7 @@
 var timeLeft = document.querySelector(".timer");
 
 // set time limit
-var secondsLeft = 30; // instead, say something like 15seconds*number of questions in array = time limit?
+var secondsLeft = 75; // instead, say something like 15seconds*number of questions in array = time limit?
 function setTime() {
     var timerInterval = setInterval(function() {
         secondsLeft--;
@@ -22,12 +22,24 @@ var questions = [
       question: "Commonly used data types DO NOT include:",
       choices: ["strings", "booleans", "alerts", "numbers"],
       answer: "alerts"
-    },
-    {
+    },{
       question: "The condition in an if / else statement is enclosed within ____.",
       choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
       answer: "parentheses"
+    },{
+      question: "Which built-in method combines the text of two strings and returns a new string?",
+      choices: ["append()", "concat()", "attach()", "None of the above"],
+      answer: "concat()"
+    },{
+      question: "What is the HTML tag under which one can write the JavaScript code?",
+      choices: ["<javascript>", "<scripted>", "<script>", "<js>"],
+      answer: "<script>"
+    },{
+      question: "What is the correct syntax for referring to an external script called 'script.js'?",
+      choices: ["<script src='script.js'>", "<script href='script.js'>", "<script src='script.js'>", "<script name='script.js'>"],
+      answer: "<script src='script.js'>"
     }
+
   ]; //end questions array
 
 
@@ -39,7 +51,8 @@ let answer = questions[0].answer;
 // display choices as buttons
 function displayChoices() {
   for (var i = 0; i < choices.length; i++) {
-    var answers = document.createElement("button")
+    var answers = document.createElement("btn-group-vertical")
+    answers.className="btn btn-light "
     answers.innerHTML = choices[i]
     document.getElementById("choicesText").appendChild(answers);
   };
