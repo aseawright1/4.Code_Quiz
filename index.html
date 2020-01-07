@@ -42,9 +42,9 @@ Description: This file defines the quiz interface-->
         <!-- landing page text-->
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h1>Coding Quiz Challenge</h1>
-                <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by 10 seconds!</p>
-                <a class="btn btn-primary" href="#" role="button">Start Quiz</a>
+                <h1 id=headerText> Coding Quiz Challenge</h1>
+                <p id=choicesText> Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by 10 seconds!</p>
+                <a class="btn btn-primary start-btn" href="#" role="button">Start Quiz</a>
             </div>
         </div>
       </div>
@@ -53,16 +53,15 @@ Description: This file defines the quiz interface-->
     <script type="text/javascript">
         $(document).ready(function() {
 
-            //create on-click event attached to start quiz button
-            $('.btn-primary').on('click', function() {
-                setTime();
-                
+            // create on-click event attached to start quiz button
+            $('.start-btn').on('click', function() {
+                setTime(); clearText(); displayChoices(); //displayQuestion();
             });
         });
     </script>
 
 
-
+<!-- array inside of an array? -->
 
       <!-- On-click events -->
 
