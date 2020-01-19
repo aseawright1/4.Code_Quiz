@@ -44,21 +44,20 @@ Description: This file defines the quiz interface-->
             <div class="col-lg-12 text-center">
                 <h1 id=headerText> Coding Quiz Challenge</h1>
                 <p id=choicesText> Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by 10 seconds!</p>
-                <a class="btn btn-primary start-btn" href="#" role="button">Start Quiz</a>
+                <div id = 'submit-btn'>
+                    <a class="btn btn-primary start-btn" href="#" role="button">Start Quiz</a>
+                </div>
+
+                <form id="scoreForm" action="/action_page.php">
+                    Name: <input type="text" name="name">
+                    <input type="button" onclick="storeScore()" value="Submit score">
+                </form>
             </div>
         </div>
       </div>
 
     <script src="assets/js/questions.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-
-            // create on-click event attached to start quiz button
-            $('.start-btn').on('click', function() {
-                setTime(); clearText(); displayChoices(); //displayQuestion();
-            });
-        });
-    </script>
+    <!-- <script type="text/javascript"> -->
 
             <!-- on click event starts timer and shows question -->
     <!-- quiz pages -->
