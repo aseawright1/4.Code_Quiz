@@ -5,27 +5,28 @@ Description: This file defines the quiz interface-->
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Coding Quiz</title>
+    <meta charset="UTF-8">
+    <title>Coding Quiz</title>
 
-  <!-- Reference the CSS formatting -->
-  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- Reference the CSS formatting -->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-  <!-- Add link to the jQuery Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Add link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  <!-- Add link to BootStrap library -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Add link to BootStrap library -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 </head>
 
 <body>
 
     <!-- create navbar -->
-    
-    <div class="container">   
+
+    <div class="container">
 
         <div class="row">
             <!-- add link to high scores -->
@@ -44,31 +45,21 @@ Description: This file defines the quiz interface-->
             <div class="col-lg-12 text-center">
                 <h1 id=headerText> Coding Quiz Challenge</h1>
                 <p id=choicesText> Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by 10 seconds!</p>
-                <div id = 'submit-btn'>
+                <div id='submit-btn'>
                     <a class="btn btn-primary start-btn" href="#" role="button">Start Quiz</a>
                 </div>
 
-                <form id="scoreForm" action="/action_page.php">
-                    Name: <input type="text" name="name">
-                    <input type="button" onclick="storeScore()" value="Submit score">
-                </form>
+                <div id="scoreForm">
+                    <label for="name">Name: </label>
+                    <input type="name" name="name" id="name" />
+                    <button id="submit-score">Submit Score</button>
+                </div>
             </div>
         </div>
-      </div>
+    </div>
 
     <script src="assets/js/questions.js"></script>
-    <!-- <script type="text/javascript"> -->
-
-            <!-- on click event starts timer and shows question -->
-    <!-- quiz pages -->
-        <!-- create buttons with choices -->
-        <!-- incorrect choice subtracts 10s from timer -->
-        <!-- on-click showing right or wrong -->
-    <!-- final page with name entry and score track -->
-        <!-- display all done heading, final score, initials entry field -->
-        <!-- submit button saves score to local storage -->
-        <!-- display all saved scores with names -->
-        <!-- button for clear scores and send back to landing page  -->
 
 </body>
+
 </html>
