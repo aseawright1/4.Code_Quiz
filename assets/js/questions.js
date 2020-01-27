@@ -34,12 +34,12 @@ $(document).ready(function() {
             answer: "concat()"
         }, {
             question: "What is the HTML tag under which one can write the JavaScript code?",
-            choices: ["<javascript>", "<scripted>", "<script>", "<js>"],
-            answer: "<script>"
+            choices: ["<javascript>", "<scripted>", "<xxxx>", "<js>"],
+            answer: "<xxxx>"
         }, {
             question: "What is the correct syntax for referring to an external script called 'script.js'?",
-            choices: ["<script src='script.js'>", "<script href='script.js'>", "<script src='script.js'>", "<script name='script.js'>"],
-            answer: "<script src='script.js'>"
+            choices: ["<xxxx src='script.js'>", "<xxxx href='script.js'>", "<xxxx src='script.js'>", "<xxxx name='script.js'>"],
+            answer: "<xxxx src='script.js'>"
         }
 
     ]; //end questions array
@@ -48,7 +48,7 @@ $(document).ready(function() {
     //hide score form
     let scoreForm = document.getElementById('scoreForm');
     scoreForm.style.visibility = 'hidden';
-
+    let scoreBtn = document.getElementById('submit-btn')
 
     // create global variables for question, choices, answers
 
@@ -74,7 +74,6 @@ $(document).ready(function() {
             answers.className = "btn btn-light"
 
             //remove submit button
-            let scoreBtn = document.getElementById('submit-btn')
             scoreBtn.style.visibility = 'hidden';
 
             // on click events
@@ -129,24 +128,26 @@ $(document).ready(function() {
     $('.start-btn').on('click', function(event) {
         event.preventDefault()
         setTime();
-        displayChoices(); //displayQuestion();
+        displayChoices();
     });
 
     // create on-click to store name in local storage
     var finalScoreBtn = document.querySelector('#submit-score');
     finalScoreBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        var name = document.querySelector('#name').value;
+        let name = document.querySelector('#name').value; // insert var name line here
         localStorage.setItem('name', name);
     });
 
     // create on-click to view highscore
-    // var highscoreBtn = document.querySelector('.btn-link');
-    // highscoreBtn.addEventListener('click', function(viewHighscores) {
-    //     document.getElementById('headerText').innerHTML = "";
-    //     document.getElementById('choicesText').innerHTML = `${name} --- ${finalScore}`;
-    //     scoreForm.style.visibility = 'hidden';
-
-    // })
+    var highscoreBtn = document.querySelector('.btn-link');
+    highscoreBtn.addEventListener('click', function(viewHighscores) {
+        if ((secondsLeft === 75) || (gameOver)) {
+            viewHighscores.preventDefault();
+            document.getElementById('headerText').innerHTML = "";
+            document.getElementById('choicesText').innerHTML = `${localStorage.getItem('name')} ...................................... ${localStorage.getItem('finalScore')}`;
+            scoreForm.style.visibility = 'hidden';
+        } else {}
+    })
 
 }); // end document ready
