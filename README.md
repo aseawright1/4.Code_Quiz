@@ -1,4 +1,4 @@
-# 4.Code_Quiz
+# Code_Quiz
 
 ## What this project is
 This is an interactive timer-based quiz application to test knowledge of basic JavaScript fundamentals
